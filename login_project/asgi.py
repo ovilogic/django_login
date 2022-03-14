@@ -1,5 +1,5 @@
 """
-ASGI config for do_login project.
+ASGI config for login_project project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'do_login.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'login_project.settings')
 
 application = get_asgi_application()
