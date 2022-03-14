@@ -1,4 +1,8 @@
+
+
+
 from datetime import datetime
+
 
 class Comment:
     def __init__(self, email, content, created=None):
@@ -7,4 +11,18 @@ class Comment:
         self.content = content
         self.created = created or datetime.now()
 
+
 comment = Comment(email='ovidiu.opreah@outlook.com', content='foo bar')
+
+
+from rest_framework import serializers
+
+
+class CommentSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    content = serializers.CharField(max_length=200)
+    created = serializers.DateTimeField()
+
+
+serializer = CommentSerializer(comment)
+print(serializer.data)
